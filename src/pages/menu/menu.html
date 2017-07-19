@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-title>
+      <ion-icon name='menu' item-start></ion-icon>
+       MENU
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-border>
+
+    <ion-list-header>
+      Azioni di spunta
+    </ion-list-header>
+
+    <ion-item (click)="gotoWhere(0)">
+      {{d.actionTypeList[0].description}}
+      <ion-icon name='archive' item-start></ion-icon>
+    </ion-item>
+
+    <ion-item (click)="gotoWhere(1)"> 
+      {{d.actionTypeList[1].description}}
+      <ion-icon name='paper-plane' item-start></ion-icon>
+    </ion-item>
+
+    <ion-item (click)="gotoWhere(2)">
+      {{d.actionTypeList[2].description}}
+      <ion-icon name='share' item-start></ion-icon>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Riepilogo
+    </ion-list-header>
+    <ion-item (click)="buttonRiepilogo()">
+      Lista di azioni
+      <ion-icon name='ios-list' item-start></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+
+    <ion-list-header>
+      Profile
+    </ion-list-header>
+
+    <ion-item (click)="infos()">
+
+      <ion-icon name='information-circle' item-start></ion-icon>
+      Informations
+      <ion-note item-end>Informations about you
+        <ion-icon name='person' item-start></ion-icon>
+      </ion-note>
+    </ion-item>
+
+    <ion-item (click)="buttonStatist()">
+      <ion-icon name='trending-up' item-start></ion-icon>
+      Statistics
+      <ion-note item-end>Yours statistics
+        <ion-icon name='stats' item-start></ion-icon>
+      </ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='log-out' item-start></ion-icon>
+      <button ion-button color="danger" (click)="logout()">LOG OUT</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

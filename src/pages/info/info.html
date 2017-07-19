@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Informations
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-list>
+    <ion-item>
+        SEI L'UTENTE
+    </ion-item>
+</ion-list>    
+<ion-list>
+    <ion-item > CIAO</ion-item>
+    <ion-item> {{user}}</ion-item>
+    <ion-item> Session started at:</ion-item>
+    <ion-item>
+      <ion-datetime displayFormat="MMM DD, h:mm A" [(ngModel)]="date"></ion-datetime>
+    </ion-item>
+</ion-list>

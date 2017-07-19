@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>COSA?</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="ean" OnlyNumber="true" placeholder="Barcode"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <button ion-button full (click)="frstButton()" *ngIf="bottoni[0]">
+            AVANTI
+        </button>
+    </ion-list>
+
+    <ion-list *ngIf="!notConfirmed">
+        <ion-item>
+            CODICE PRODOTTO: {{codice}}
+        </ion-item>
+    </ion-list>
+    <ion-list *ngIf="!notConfirmed">
+        <ion-item>
+            {{descrizione}}
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-item *ngIf="articolo.hasbatch">
+            <ion-input type="text" [(ngModel)]="lotto" placeHolder="Lotto"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <button ion-button full (click)="lottoBtn()" *ngIf="bottoni[1]">
+            AVANTI
+        </button>
+    </ion-list>
+
+    <ion-list *ngIf="lottoCorretto">
+        <ion-item>
+            DATA DI SCADENZA: {{dataScad}}
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-item *ngIf="bottoni[2]">
+            QUANTITÀ
+            <ion-input type='number' [(ngModel)]="quantita"> </ion-input>
+        </ion-item>
+        <ion-item *ngIf="bottoni[2]"> {{unitaMisura}} </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <button ion-button full (click)="qtaBtn()" *ngIf="bottoni[2]">
+            AVANTI
+        </button>
+    </ion-list>
+</ion-content>
